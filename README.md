@@ -1,2 +1,2 @@
 # dframe-docs-pl
-Oficjalne repozytorium Polskiej dokumentacji dframe/dframe
+Oficjalne repozytorium Polskiej dokumentacji dframe/dframe.
