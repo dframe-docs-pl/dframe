@@ -77,16 +77,14 @@ Kontroler
  
      public function docs() {
          if(!isset($_GET['docsId'])){
-             $this->router->redirect('error/404');
-             return;
+             return $this->router->redirect('error/:code?code=404');
          }
  
      public function error($status = '404'){
          $routerCodes = $this->router->response();
  
          if(!array_key_exists($status, $routerCodes::$code)){
-             $this->router->redirect('error/500');
-             return;
+             return $this->router->redirect('error/:code?code=500');
          }
  
          $view = $this->loadView('index');
@@ -95,8 +93,7 @@ Kontroler
          $patchController = $smartyConfig->get('setTemplateDir', appDir.'../app/View/templates').'/ errors/'.htmlspecialchars($status).$smartyConfig->get('fileExtension', '.html.php');
  
          if(!file_exists($patchController)){
-             $this->router->redirect('error/404');
-             return;
+             return $this->router->redirect('error/:code?code=404'');
          }
  
          $view->assign('error', $routerCodes::$code[$status]);
