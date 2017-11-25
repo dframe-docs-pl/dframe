@@ -39,7 +39,7 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
          if(isset($_GET['type']))
              $type = htmlspecialchars($_GET['type']);
  
-         $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/ templates').'/'.$type.'/'.htmlspecialchars($_GET['action']).$smartyConfig->get('fileExtension', '.html.php');
+         $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/'.$type.'/'.htmlspecialchars($_GET['action']).$smartyConfig->get('fileExtension', '.html.php');
          
          if(!file_exists($patchController)){
              $this->router->redirect('page/index');
