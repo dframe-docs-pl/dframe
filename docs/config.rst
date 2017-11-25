@@ -5,6 +5,7 @@ Opis
 Jeden z często przydatnych rozwiązań. Pojedyncze pliki określające konfiguracje danego modułu. W przykładowej wersji aplikaci znajduje sie Config/router.php oraz Config/View/smarty.php
 
 .. code-block:: php
+
  return array(
     'setTemplateDir' => '../app/View/templates',
     'setCompileDir' => '../app/View/templates_c',
@@ -15,6 +16,7 @@ Jeden z często przydatnych rozwiązań. Pojedyncze pliki określające konfigur
 W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przykładowej aplikacji została wykorzystana ta klasa do pobrania "setTemplateDir" w przeciwnym wypadku gdyby nie było ustalonej wartości ma załadować nam ścieszkę podaną jako drugi parametr.
 
 .. code-block:: php
+
  namespace Controller;
  use Dframe\Controller;
  use Dframe\Config;

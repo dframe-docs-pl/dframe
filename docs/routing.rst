@@ -14,6 +14,7 @@ W pliku konfiguracyjnym definiujemy tablicę z adresami dla naszej aplikacji.
  - |default| - domyślna definicja ładujaca controler/method. |params| definiuje możliwość pojawienia się dodatkowych parametrów, natomiast 
 
 .. code-block:: php
+
  '_params' => array(
      '[name]/[value]/',
      '[name]=[value]'
@@ -24,6 +25,7 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
 **Config/router.php**
 
 .. code-block:: php
+
  return array(
     'https' => false,
     'NAME_CONTROLLER' => 'page',
@@ -62,6 +64,7 @@ Kontroler
 **Controller/Page.php**
 
 .. code-block:: php
+
  namespace Controller;
  use Dframe\Controller;
  
@@ -121,7 +124,9 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
 .. customLi:: myTabs
  :php: active/php
  :smarty: smarty
+ 
   .. code-block:: php
+  
    <?php include "header.html.php" ?>
    Przykładowa strona stworzona na Frameworku Dframe
    
@@ -137,7 +142,9 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
   - |router| wszystkie już dostępne metody używa analogicznie do |page/index|
 
   next
+  
   .. code-block:: php
+  
    {include file="header.html.php"}
    Przykładowa strona stworzona na Frameworku Dframe
    
@@ -153,7 +160,9 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
   - |$router| wszystkie już dostępne metody używa analogicznie do |$makeurl|
 
 **View/index.php**
+
 .. code-block:: php
+
  namespace View;
  use Dframe\Asset\Assetic;
  
@@ -167,11 +176,13 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
          /* ... */
 
 .. center::
+
  Dframe\Router\Response
 
 Rozszerzenie podstawowego **Dframe\Router** jest **Dframe\Router\Response** dodaje on funkcjonalność ustawiania statusu odpowiedzi (404, 500 itp) oraz ich nagłówków. 
 
 .. code-block:: php
+
  return Response::create('Hello Word!')
         ->status(200)
         ->header([
@@ -183,11 +194,13 @@ Rozszerzenie podstawowego **Dframe\Router** jest **Dframe\Router\Response** doda
 Dla generowania html
 
 .. code-block:: php
+
  return Response::render('Hello Word!');
 
 Dla generowania html
 
 .. code-block:: php
+
  return Response::renderJSON(array('return' => '1')); 
 
 .. |https| cCode:: https
