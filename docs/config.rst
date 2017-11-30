@@ -41,9 +41,6 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
       
      public function __call($method, $test)
      {
-         if (method_exists($this, $_GET['action'])) { // Skip dynamic page if method in controller exist
-             return;
-         }
          $smartyConfig = Config::load('view/smarty');
          $view = $this->loadView('Index');
          $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/page/'.htmlspecialchars($_GET['action']).$smartyConfig->get('fileExtension', '.html.php');
