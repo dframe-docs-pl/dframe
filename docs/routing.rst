@@ -93,7 +93,7 @@ Kontroler
          $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/ errors/'.htmlspecialchars($status).$smartyConfig->get('fileExtension', '.html.php');
  
          if(!file_exists($patchController)){
-             return $this->router->redirect('error/:code?code=404'');
+             return $this->router->redirect('error/:code?code=404');
          }
  
          $view->assign('error', $routerCodes::$code[$status]);
