@@ -2,7 +2,7 @@
 Opis
 ====
 
-Jeden z często przydatnych rozwiązań. Pojedyncze pliki określające konfiguracje danego modułu. W przykładowej wersji aplikaci znajduje sie Config/router.php oraz Config/View/smarty.php
+Jeden z często przydatnych rozwiązań. Pojedyncze pliki określające konfiguracje danego modułu. W przykładowej wersji aplikacji  znajduje sie Config/router.php oraz Config/View/smarty.php
 
 .. code-block:: php
 
