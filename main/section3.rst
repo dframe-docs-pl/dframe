@@ -29,6 +29,13 @@
    RewriteRule ^(.*)$ web/index.php [QSA,L]
   next
   .. code-block:: nginx
+   location / {
+       root   /home/widget/htdocs/web;
+       index  index.html index.php index.htm;
+       if (!-e $request_filename) {
+           rewrite ^/(.*)$ /index.php?q=$1 last;
+       }
+   }
    location ~ .php$ {
        try_files $uri = 404;
        fastcgi_pass 127.0.0.1:9000;
