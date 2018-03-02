@@ -30,7 +30,7 @@
   next
   .. code-block:: nginx
    location / {
-       root   /home/widget/htdocs/web;
+       root   /home/[project_path]/htdocs/web;
        index  index.html index.php index.htm;
        if (!-e $request_filename) {
            rewrite ^/(.*)$ /index.php?q=$1 last;
