@@ -182,7 +182,7 @@ Rozszerzenie podstawowego **Dframe\Router** jest **Dframe\Router\Response** doda
 
  return Response::create('Hello Word!')
         ->status(200)
-        ->header([
+        ->headers([
             'Expires' => 'Mon, 26 Jul 1997 05:00:00 GMT', 
             'Cache-Control' => 'no-cache',
             'Pragma', 'no-cache'
