@@ -20,5 +20,5 @@ Przyład użycia:
      return Response::renderJSON(array('return' => '0', 'response' => 'Formularz wygasł.'));
  }
  
- $evidenceToken = $this->baseClass->token->generate('evidenceToken')->getToken('evidenceToken')
+ $evidenceToken = $this->baseClass->token->generate('evidenceToken')->getToken('evidenceToken');
  
