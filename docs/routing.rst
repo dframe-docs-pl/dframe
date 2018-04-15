@@ -81,44 +81,47 @@ Kontroler
 
 .. code-block:: php
 
+ <?php
  namespace Controller;
  use Dframe\Controller;
  
- class PageController extends Controller 
+ class PageController extends Controller
  {
-     public function index(){
+     public function index()
+     {
          echo $this->router->makeUrl('docs/:docsId?docsId=23');
          return;
      }
  
-     public function docs() {
-         if(!isset($_GET['docsId'])){
+     public function docs()
+     {
+ 
+         if (!isset($_GET['docsId'])) {
              return $this->router->redirect('error/:code?code=404');
          }
  
-     public function error($status = '404'){
-         $routerCodes = $this->router->response();
+         public function error($status = '404'){
+             $routerCodes = $this->router->response();
  
-         if(!array_key_exists($status, $routerCodes::$code)){
-             return $this->router->redirect('error/:code?code=500');
+             if (!array_key_exists($status, $routerCodes::$code)) {
+                 return $this->router->redirect('error/:code?code=500');
+             }
+ 
+             $view = $this->loadView('index');
+             $smartyConfig = Config::load('view/smarty');
+ 
+             $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/ errors/'.htmlspecialchars($status).$smartyConfig->get('fileExtension', '.html.php');
+ 
+             if (!file_exists($patchController)) {
+                 return $this->router->redirect('error/:code?code=404');
+             }
+ 
+             $view->assign('error', $routerCodes::$code[$status]);
+             $view->render('errors/'.htmlspecialchars($status));
          }
- 
-         $view = $this->loadView('index');
-         $smartyConfig = Config::load('view/smarty');
- 
-         $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/ errors/'.htmlspecialchars($status).$smartyConfig->get('fileExtension', '.html.php');
- 
-         if(!file_exists($patchController)){
-             return $this->router->redirect('error/:code?code=404');
-         }
- 
-         $view->assign('error', $routerCodes::$code[$status]);
-         $view->render('errors/'.htmlspecialchars($status));
      }
- 
-     }
- }
-
+     
+     
 .. |router| cCode:: 
  <?php $this->router; ?>
 .. |page/index| cCode:: 
@@ -182,7 +185,8 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
  
  class IndexView extends \View\View
  {
-     public function init(){
+     public function init()
+     {
          $this->router->assetic = new Assetic();
          $this->assign('router', $this->router);
  
