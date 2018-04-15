@@ -10,7 +10,7 @@ By móc zacząć używać tokenów do pliku Bootstrap.php należy dopisać do __
 .. code-block:: php
 
  $this->session  = new \Dframe\Session(SESSION_NAME);
- $this->token  = new Dframe\Token($this->session);
+ $this->token  = new \Dframe\Token($this->session);
 
 Przyład użycia:
 
