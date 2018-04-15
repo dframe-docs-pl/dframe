@@ -21,13 +21,15 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
  namespace Controller;
  use Dframe\Controller;
  use Dframe\Config;
+ use Dframe\Router\Response;
 
  class PageController extends Controller
  {
      /**
       * initial function call
       */
-     public function init(){
+     public function init()
+     {
 
      }
      
@@ -48,6 +50,7 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
          if (!file_exists($patchController)) {  
              return $this->router->redirect('page/index');
          }
+         
          return Response::create($view->fetch('page/'.htmlspecialchars($_GET['action'])));
         
      }
