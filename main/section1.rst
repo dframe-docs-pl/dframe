@@ -12,7 +12,7 @@
   
   Wymagania
   
-   - PHP =< 7.0 Zalecany
+   - PHP =< 7.0
    - Moduł Rewrite (nginix/apache2)
    - Composer
   
