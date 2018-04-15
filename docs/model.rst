@@ -15,10 +15,12 @@ W modelu tworzysz poszczególne metody które mają zapytania do bazy danych ora
          * return array(boolean, array)
          */
     
-        public function getRequestSettings($requestId){
+        public function getRequestSettings($requestId)
+        {
             $row = $this->baseClass->db->pdoQuery('SELECT * FROM `request_type` WHERE request_type_id = ?', array($requestId))->result();
             return $this->methodResult(true, $row);        
-    }
+        }
+
 
 Warto zwrócić uwagę ze praktycznie wszystkie metody, po za kilkoma wyjątkami, zwracają dane w postaci tablicy gotowej do odczytu i zwracane są przez metodę.
 
