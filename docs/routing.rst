@@ -26,35 +26,51 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
 
 .. code-block:: php
 
+ <?php
+ 
  return array(
-    'https' => false,
-    'NAME_CONTROLLER' => 'page',
-    'NAME_METHOD' => 'index',
-    'publicWeb' => '',
-    'assetsPath' => '',
-
-    'docs/:docsId' => array(
-        'docs/[docsId]/', 
-        'task=page&action=[docsId]&type=docs'
-    ),
-    
-    'error/:status' => array(
-        'error/[status]/', 
-        'task=page&action=error&status=[status]',
-        'args' => array(
-            'status' => '[status]'
-        ),
-    ),
-    'default' => array(
-        '[task]/[action]/[params]',
-        'task=[task]&action=[action]',
-        'params' => '(.*)',
-        '_params' => array(
-            '[name]/[value]/', 
-            '[name]=[value]'
-            )
-        ),       
+     'https' => false,
+     'NAME_CONTROLLER' => 'page',    // Default Controller for router
+     'NAME_METHOD' => 'index',       // Default Action for router
+     'publicWeb' => '',              // Path for public web (web or public_html)
+ 
+     'assets' => array(
+         'minifyCssEnabled' => true,
+         'minifyJsEnabled' => true,
+         'assetsDir' => 'assets',
+         'assetsPath' => APP_DIR.'View/',
+         'cacheDir' => 'cache',
+         'cachePath' => APP_DIR.'../web/',
+         'cacheUrl' => HTTP_HOST.'/',
+     ),
+ 
+     'routes' => array(
+         'docs/:pageId' => array(
+             'docs/[pageId]/', 
+             'task=page&action=[docsId]&type=docs'
+         ),
+         
+         'error/:code' => array(
+             'error/[code]/', 
+             'task=page&action=error&type=[code]',
+             'args' => array(
+                 'code' => '[code]'
+             )
+         ),
+         
+         'default' => array(
+             '[task]/[action]/[params]',
+             'task=[task]&action=[action]',
+             'params' => '(.*)',
+             '_params' => array(
+                 '[name]/[value]/', 
+                 '[name]=[value]'
+             )
+         )
+    )   
+ 
  );
+
 
 Kontroler
 ---------
