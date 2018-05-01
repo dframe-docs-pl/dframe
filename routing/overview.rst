@@ -58,6 +58,16 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
              )
          ),
          
+         ':task/:action' => array(
+             '[task]/[action]/[params]',
+             'task=[task]&action=[action]',
+             'params' => '(.*)',
+             '_params' => array(
+                 '[name]/[value]/',
+                 '[name]=[value]'
+             )
+          ),
+          
          'default' => array(
              '[task]/[action]/[params]',
              'task=[task]&action=[action]',
@@ -128,9 +138,9 @@ Kontroler
 .. |router| cCode:: 
  <?php $this->router; ?>
 .. |page/index| cCode:: 
- <?php $this->router->makeUrl('page/index'); ?>
+ <?php $this->router->makeUrl(':task/:action?task=page&action=index'); ?>
 .. |$router| cCode:: {$router}
-.. |$makeurl| cCode:: {$router->makeUrl('index/page')}
+.. |$makeurl| cCode:: {$router->makeUrl(':task/:action?task=index&action=page&page=1')}
 
 
 Widok
@@ -150,8 +160,8 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
    Przykładowa strona stworzona na Frameworku Dframe
    
    Routing:
-   <?php $this->router->makeurl('page/index'); ?> index/page
-   <?php $this->makeurl('error/404'); ?> page/404
+   <?php $this->router->makeurl(':task/:action?task=index&action=page'); ?> index/page
+   <?php $this->makeurl('error/:code?code=404'); ?> page/404
    
    <?php $this->domain('https://examplephp.com')->makeurl('error/404'); ?> page/404
    
@@ -168,10 +178,10 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
    Przykładowa strona stworzona na Frameworku Dframe
    
    Routing:
-   {$router->makeurl('page/index')} index page
-   {$router->makeurl('error/404')} page 404
+   {$router->makeurl(':task/:action?task=index&action=page')} index page
+   {$router->makeurl('error/:code?code=404')} page 404
    
-   {$router->domain('https://examplephp.com')->makeurl('error/404')} page 404
+   {$router->domain('https://examplephp.com')->makeurl('error/:code?code=404')} page 404
    
    {include file="footer.html.php"}
   W przykładzie użyty jest silnik S.M.A.R.T.Y
@@ -238,4 +248,4 @@ Dla generowania html
 
 .. |makeurl| cCode:: $this->router->makeUrl('docs/:docsId?docsId=23');
 .. |header| cCode:: Header('Location: ""');
-.. |redirect| cCode:: $this->router->redirect('page/index');
+.. |redirect| cCode:: $this->router->redirect(':task/:action?task=index&action=page');
