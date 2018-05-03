@@ -19,6 +19,7 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
 .. code-block:: php
 
  namespace Controller;
+ 
  use Dframe\Controller;
  use Dframe\Config;
  use Dframe\Router\Response;
