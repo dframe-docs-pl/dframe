@@ -18,8 +18,8 @@ Controller
     {
         
         /**
-        * @Route("/page/index", name="test/test")
-        */ 
+         * @Route("/page/index", name="test/test")
+         */ 
         public function index()
         {
             echo $this->router->makeUrl('docs/:docsId?docsId=23');
@@ -27,8 +27,8 @@ Controller
         }
 
         /**
-        * @Route("/docs/[docs]", name="docs/:docs")
-        */
+         * @Route("/docs/[docs]", name="docs/:docs")
+         */
         public function docs()
         {
     
@@ -38,8 +38,8 @@ Controller
         }
 
         /**
-        * @Route("/error/[code]", name="error/:code")
-        */ 
+         * @Route("/error/[code]", name="error/:code")
+         */ 
         public function error($status = '404')
         {
             $routerCodes = $this->router->response();
