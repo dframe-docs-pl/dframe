@@ -229,9 +229,23 @@ Dla generowania html
 
 Dla generowania html
 
+Wyświetlanie w formacie JSON
+
 .. code-block:: php
 
  return Response::renderJSON(array('return' => '1')); 
+
+Wyświetlanie w formacie JSONP 
+
+.. code-block:: php
+
+ return Response::renderJSONP(array('return' => '1')); 
+
+Przekierowanie
+
+.. code-block:: php
+
+ return Response::redirect(':task/:action?task=page&action=login');
 
 .. |https| cCode:: https
 .. |NAME_CONTROLLER| cCode:: NAME_CONTROLLER
