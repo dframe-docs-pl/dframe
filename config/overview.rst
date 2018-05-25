@@ -1,3 +1,9 @@
+.. title:: Config - Prosty sposób na ładowanie plików
+
+.. meta::
+    :description: Config - Prosty sposób na ładowanie plików - dframeframework.com
+    :keywords: dframe, config, loading, loader, dframeframework
+    
 ====
 Opis
 ====
