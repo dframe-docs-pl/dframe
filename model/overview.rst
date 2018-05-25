@@ -1,3 +1,9 @@
+.. title:: Model - Stwórz metody które mają zapytania do bazy
+
+.. meta::
+    :description:  Model - Stwórz metody które mają zapytania do bazy - dframeframework.com
+    :keywords: dframe, model, mysql, database, dframeframework  
+    
 ====
 Opis
 ====
