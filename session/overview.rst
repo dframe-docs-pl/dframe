@@ -1,3 +1,9 @@
+.. title:: Session - Przechowuj informacje o użytkowniku
+
+.. meta::
+    :description: Session - Przechowuj informacje o użytkowniku - dframeframework.com
+    :keywords: dframe, Session, fingerprint, store, information, dframeframework   
+
 ====
 Opis
 ====
