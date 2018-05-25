@@ -1,3 +1,9 @@
+.. title:: Instalacja oraz konfiguracja Dframe Framework
+
+.. meta::
+    :description: Instalacja oraz konfiguracja Dframe Framework - dframeframework.com
+    :keywords: dframe, instalation, composer, github, download, chmod, dframeframework   
+
 Pobieranie
 ----------
 
