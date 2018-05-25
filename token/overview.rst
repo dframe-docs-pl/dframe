@@ -1,3 +1,10 @@
+.. title:: Token - Biblioteka do tworzenia tokenów CSRF
+
+.. meta::
+    :description: Token - Biblioteka do tworzenia tokenów CSRF - dframeframework.com
+    :keywords: dframe, Token, CSRF, tokens, Cross-Site Request Forgery, dframeframework  
+
+
 Tokeny
 ----------
 
