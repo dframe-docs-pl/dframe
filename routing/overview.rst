@@ -1,3 +1,10 @@
+.. title:: Routing - Elastyczny routing linków
+
+.. meta::
+    :description: Routing - Elastyczny routing linków - dframeframework.com
+    :keywords: dframe, router, routing, urls, url, friendlyurl, htaccess, routes, dframeframework  
+
+
 Konfiguracja
 ------------
 
