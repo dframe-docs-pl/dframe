@@ -36,17 +36,13 @@ albo
 
 Zainicjuje to pobieranie najnoszego kodu dostępnego na `Github.com <https://github.com/dframe/dframe-demo>`_.
 
-
 Albo wejdz do repozytorium i pobierz kod w `Dframe-demo.zip <https://github.com/dframe/dframe-demo/releases>`_.
 Możesz też ręcznie pobrać projekt w .zip z github'a i odpalić w konsoli bash poniższe polecenie
 
 .. code-block:: bash
 
  $ composer install
-
-
-
-
+ 
 Po tej operacji będziesz miał gotowy szkielet twojej aplikacji
 
 Uprawnienia
