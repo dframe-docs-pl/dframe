@@ -160,40 +160,42 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
 .. customLi:: myTabs
  :php: active/php
  :smarty: smarty
- 
-  .. code-block:: php
-  
-   <?php include "header.html.php" ?>
-   Przykładowa strona stworzona na Frameworku Dframe
-   
-   Routing:
-   <?php $this->router->makeurl(':task/:action?task=index&action=page'); ?> index/page
-   <?php $this->makeurl('error/:code?code=404'); ?> page/404
-   
-   <?php $this->domain('https://examplephp.com')->makeurl('error/404'); ?> page/404
-   
-   <?php include "footer.html.php" ?>
-  Przy wykorzystaniu czystego PHP
 
-  - |router| wszystkie już dostępne metody używa analogicznie do |page/index|
+  .. code-block:: php
+
+   <?php include "header.html.php" ?>
+   Example site created using the Dframe Framework
+
+   Routing:
+   <?php $this->router->makeurl(':task/:action?task=index&action=page'); ?> <!-- http://example.com/index/page -->
+   <?php $this->router->makeurl('error/:code?code=404'); ?> <!-- http://example.com/page/404 -->
+   <?php $this->router->publicWeb('css/style.css'); ?> <!-- http://example.com/css/style.css -->
+
+   <?php $this->domain('https://example.com')->makeurl('error/:code?code=404'); ?> <! -- http://examplephp.com/page/404 -->
+
+   <?php include "footer.html.php" ?>
+   Using only PHP
+
+  - |router| all already available methods used like in |page/index|
 
   next
-  
-  .. code-block:: php
-  
-   {include file="header.html.php"}
-   Przykładowa strona stworzona na Frameworku Dframe
-   
-   Routing:
-   {$router->makeurl(':task/:action?task=index&action=page')} index page
-   {$router->makeurl('error/:code?code=404')} page 404
-   
-   {$router->domain('https://examplephp.com')->makeurl('error/:code?code=404')} page 404
-   
-   {include file="footer.html.php"}
-  W przykładzie użyty jest silnik S.M.A.R.T.Y
 
-  - |$router| wszystkie już dostępne metody używa analogicznie do |$makeurl|
+  .. code-block:: php
+
+   {include file="header.html.php"}
+   Example site created using the Dframe Framework
+
+   Routing:
+   {$router->makeurl(':task/:action?task=index&action=page')} <! -- http://example.com/index/page -->
+   {$router->makeurl('error/:code?code=404')} <!-- http://example.com/page/404 -->
+   {$router->publicWeb('css/style.css')}  <!-- http://example.com/css/style.css -->
+
+   {$router->domain('https://examplephp.com')->makeurl('error/:code?code=404')}  <!-- http://examplephp.com/page/404 -->
+
+   {include file="footer.html.php"}
+   S.M.A.R.T.Y Engine used in the example
+
+  - |$router| all already available methods are used like in |$makeurl|
 
 **View/index.php**
 
