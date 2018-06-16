@@ -1,7 +1,7 @@
 .. title:: Session - Przechowuj informacje o użytkowniku
 
 .. meta::
-    :description: Session - Przechowuj informacje o użytkowniku - dframeframework.com
+    :description: To prosty element frameworka który pozwala na szybke operowanie sesjami w php.
     :keywords: dframe, Session, fingerprint, store, information, dframeframework   
 
 ====
