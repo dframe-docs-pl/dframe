@@ -1,7 +1,7 @@
 .. title:: Model - Stwórz metody które mają zapytania do bazy
 
 .. meta::
-    :description:  Model - Stwórz metody które mają zapytania do bazy - dframeframework.com
+    :description:  W modelu tworzysz poszczególne metody które mają zapytania do bazy danych oraz odpowiadają za obróbkę danych.
     :keywords: dframe, model, mysql, database, dframeframework  
     
 ====
