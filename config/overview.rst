@@ -8,7 +8,7 @@
 Opis
 ====
 
-Jeden z często przydatnych rozwiązań. Pojedyncze pliki określające konfiguracje danego modułu. W przykładowej wersji aplikacji  znajduje sie Config/router.php oraz Config/View/smarty.php
+Prosty sposób na ładowanie plików. Jeden z często przydatnych rozwiązań, pozwala ładować pojedyncze pliki określające konfiguracje danego modułu. W przykładowej wersji aplikacji  znajduje sie Config/router.php oraz Config/View/smarty.php
 
 .. code-block:: php
 
