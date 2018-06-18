@@ -10,8 +10,6 @@ Instalacja
 Wymagania
 ----------
 
-Wymagania
-
  - PHP >= 7.0
  - Rewrite Module (nginix/apache2)
  - Composer
