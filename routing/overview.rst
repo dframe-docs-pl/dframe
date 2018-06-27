@@ -1,4 +1,4 @@
-.. title:: Routing - Elastyczny routing linków
+.. title:: Routing - Prosty Router PHP
 
 .. meta::
     :description: Routing - Elastyczny routing linków. Tworząc aplikacje warto zadbać by miały one przyjazne linki.
