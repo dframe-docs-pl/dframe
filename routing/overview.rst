@@ -101,7 +101,9 @@ Kontroler
 
  <?php
  namespace Controller;
+ 
  use Dframe\Controller;
+ use Dframe\Router\Response;
  
  class PageController extends Controller
  {
