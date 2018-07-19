@@ -247,13 +247,13 @@ Wyświetlanie w formacie JSON
 
 .. code-block:: php
 
- return Response::renderJSON(['return' => '1']); 
+ return Response::renderJSON(['code' => 200, 'data' => []]); 
 
 Wyświetlanie w formacie JSONP 
 
 .. code-block:: php
 
- return Response::renderJSONP(['return' => '1']); 
+ return Response::renderJSONP(['code' => 200, 'data' => []]); 
 
 Przekierowanie
 

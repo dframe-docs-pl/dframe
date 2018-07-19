@@ -24,7 +24,7 @@ Przyład użycia:
 .. code-block:: php
 
  if (!$this->baseClass->token->isValid('evidenceToken', (isset($_POST['token']) ? $_POST['token'] : null))) {
-     return Response::renderJSON(['return' => '0', 'response' => 'Formularz wygasł.']);
+     return Response::renderJSON(['code' => 403, 'response' => 'Formularz wygasł.'])->status(403);
  }
  
  $evidenceToken = $this->baseClass->token->generate('evidenceToken')->getToken('evidenceToken');
