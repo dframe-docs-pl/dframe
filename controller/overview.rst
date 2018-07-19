@@ -73,18 +73,18 @@ Controller
   .. code-block:: php
 
     /* ... */
-    'page/index' => array(
+    'page/index' => [
         'page/index', 
         'task=page&action=index'
-    ),
-    'docs/:docs' => array(
+    ],
+    'docs/:docs' => [
         'docs/[docs]/', 
         'task=page&action=docs&docs=[docs]'
-    ),
-    'error/:code' => array(
+    ],
+    'error/:code' => [
         'error/[code]/', 
         'task=page&action=error&code=[code]'
-    ),
+    ],
     /* ... */
          
 

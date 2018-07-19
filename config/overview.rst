@@ -12,13 +12,13 @@ Prosty sposób na ładowanie plików. Jeden z często przydatnych rozwiązań, p
 
 .. code-block:: php
 
- return array(
+ return [
      'setTemplateDir' => APP_DIR.'View/templates',            // Default './View/templates'
      'setCompileDir' => APP_DIR.'View/templates_c',           // Default './View/templates_c'
      'addPluginsDir' => '',                                  // Default template dir ./Libs/Plugins/smarty
      'debugging'     => false,                               // Default False
      'fileExtension' => '.html.php'                         // Default '.html.php'
- );
+ ];
 
 W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przykładowej aplikacji została wykorzystana ta klasa do pobrania "setTemplateDir" w przeciwnym wypadku gdyby nie było ustalonej wartości ma załadować nam ścieszkę podaną jako drugi parametr.
 
