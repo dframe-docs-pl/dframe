@@ -4,6 +4,10 @@
     :description: Routing - Elastyczny routing linków. Tworząc aplikacje warto zadbać by miały one przyjazne linki.
     :keywords: dframe, router, routing, urls, seo, url, friendlyurl, htaccess, routes, dframeframework, pozycjonowanie  
 
+====
+Prosty Router PHP
+====
+
 Tworząc aplikacje warto zadbać by miały one „przyjazne” linki. Ma to duży wpływ na pozycjonowanie seo.
 Router linków działa na zasadzie jak routery sieciowe. Ma on za zadanie wywołać naszą metodę z kontrollera.
 
