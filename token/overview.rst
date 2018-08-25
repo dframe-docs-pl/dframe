@@ -28,4 +28,29 @@ Przyład użycia:
  }
  
  $evidenceToken = $this->baseClass->token->generate('evidenceToken')->getToken('evidenceToken');
- 
+
+Smarty3 Plugin
+===========
+
+.. code-block:: php
+
+ <?php
+ /*
+  * Smarty plugin for Dframe\Token
+  * -------------------------------------------------------------
+  * File:     function.token.php
+  * Type:     function
+  * Name:     token
+  * Purpose:  outputs a token
+  * -------------------------------------------------------------
+  */
+  
+ /*
+  * Instalation: 
+  * Put file in to app/Libs/Plugins/smarty/function.token.php
+  * Usage: {token name='userToken'}
+  */
+ function smarty_function_token($name){
+     $token = new \Dframe\Token(new \Dframe\Session(APP_NAME));
+     return $token->generate($name['name'])->get($name['name']);
+ }
