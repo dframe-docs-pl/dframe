@@ -11,6 +11,18 @@ Prosty Router PHP
 Tworząc aplikacje warto zadbać by miały one „przyjazne” linki. Ma to duży wpływ na pozycjonowanie seo.
 Router linków działa na zasadzie jak routery sieciowe. Ma on za zadanie wywołać naszą metodę z kontrollera.
 
+.. code-block:: php
+
+ $this->router->addRoute([
+     'page/:method' => [
+         'page/[method]/', 
+         'task=page&action=[method]'
+     ]
+ ]);
+ $this->router->makeUrl('page/:action?action=index'); // Return: https://example.php/page/index
+ $this->router->isActive('page/:action?action=index'); // Current Website true/false
+
+
 Konfiguracja
 ------------
 
