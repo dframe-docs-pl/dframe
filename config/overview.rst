@@ -50,7 +50,6 @@ W praktyce jest używany do wielu podstawowych rzeczy od pobrania danych. W przy
       *
       * @return Response
       */
- 
      public function __call($method, $test)
      {
          $smartyConfig = Config::load('view/smarty');
