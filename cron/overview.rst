@@ -49,9 +49,6 @@ Cron jest usługą do cyklicznego wykonywania zadań. Pozwala ona w określonym 
      }
  
  })->init()->display();
- 
-
-
 
 Metody
 ---------
@@ -67,8 +64,6 @@ Blokada czasowa
      return Response::renderJSON(['code' => 403, 'message' => 'Time Lock'])->status(403);
  }
 
-
-
 inLock(string $key, object $loadModel, string $method, $args = [], $ttl = 3600)
 ^^^^^^^^^^^^^^
 
@@ -77,4 +72,3 @@ Metoda ta ma w sobie wbudowaną metodę która blokuje go do czasu pełnego zako
 .. code-block:: php
 
  $this->inLock('mail', [$this->loadModel('Mail/Mail', 'Mail'), 'sendMails'], []);
-
