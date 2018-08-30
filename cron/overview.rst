@@ -15,6 +15,7 @@ Cron jest usługą do cyklicznego wykonywania zadań. Pozwala ona w określonym 
 
  <?php
  
+ use Dframe\Cron\Task;
  use Dframe\Router\Response;
  
  set_time_limit(0);
@@ -27,7 +28,7 @@ Cron jest usługą do cyklicznego wykonywania zadań. Pozwala ona w określonym 
  /**
   * Aonimowa Klasa Crona która sama siebie się wywołuje
   */
- return (new class() extends \Dframe\Cron\Task
+ return (new class() extends Task
  {
  
      /**
@@ -47,7 +48,8 @@ Cron jest usługą do cyklicznego wykonywania zadań. Pozwala ona w określonym 
  
      }
  
- })->init()->display(); 
+ })->init()->display();
+ 
 
 
 
@@ -60,9 +62,11 @@ lockTime(string $key, $ttl = 3600)
 Blokada czasowa 
 
 .. code-block:: php
-    if($this->lockTime('mail'){
-        return Response::renderJSON(['code' => 403, 'message' => 'Time Lock'])->status(403);
-    }
+
+ if ($this->lockTime('mail')) {
+     return Response::renderJSON(['code' => 403, 'message' => 'Time Lock'])->status(403);
+ }
+
 
 
 inLock(string $key, object $loadModel, string $method, $args = [], $ttl = 3600)
@@ -71,5 +75,6 @@ inLock(string $key, object $loadModel, string $method, $args = [], $ttl = 3600)
 Metoda ta ma w sobie wbudowaną metodę która blokuje go do czasu pełnego zakończenia.
 
 .. code-block:: php
-    $this->inLock('mail', [$this->loadModel('Mail/Mail', 'Mail'), 'sendMails'], []);
+
+ $this->inLock('mail', [$this->loadModel('Mail/Mail', 'Mail'), 'sendMails'], []);
 
