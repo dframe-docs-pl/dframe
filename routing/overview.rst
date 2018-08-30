@@ -52,38 +52,38 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
 .. code-block:: php
 
  <?php
- 
+  
  return [
      'https' => false,
      'NAME_CONTROLLER' => 'page',    // Default Controller for router
      'NAME_METHOD' => 'index',       // Default Action for router
      'publicWeb' => '',              // Path for public web (web or public_html)
- 
+
      'assets' => [
          'minifyCssEnabled' => true,
          'minifyJsEnabled' => true,
          'assetsDir' => 'assets',
-         'assetsPath' => APP_DIR.'View/',
+         'assetsPath' => APP_DIR . 'View/',
          'cacheDir' => 'cache',
-         'cachePath' => APP_DIR.'../web/',
-         'cacheUrl' => HTTP_HOST.'/',
+         'cachePath' => APP_DIR . '../web/',
+         'cacheUrl' => HTTP_HOST . '/',
      ],
- 
+
      'routes' => [
          'docs/:pageId' => [
-             'docs/[pageId]/', 
+             'docs/[pageId]/',
              'task=page&action=[docsId]&type=docs'
          ],
-         
+
          'error/:code' => [
-             'error/[code]/', 
+             'error/[code]/',
              'task=page&action=error&type=[code]',
              'code' => '([0-9]+)',
              'args' => [
                  'code' => '[code]'
              ]
          ],
-         
+
          ':task/:action' => [
              '[task]/[action]/[params]',
              'task=[task]&action=[action]',
@@ -93,18 +93,18 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
                  '[name]=[value]'
              ]
          ],
-          
+
          'default' => [
              '[task]/[action]/[params]',
              'task=[task]&action=[action]',
              'params' => '(.*)',
              '_params' => [
-                 '[name]/[value]/', 
+                 '[name]/[value]/',
                  '[name]=[value]'
              ]
          ]
-     ]   
- 
+     ]
+
  ];
 
 
@@ -118,6 +118,7 @@ Kontroler
 .. code-block:: php
 
  <?php
+ 
  namespace Controller;
  
  use Dframe\Controller;
@@ -125,12 +126,19 @@ Kontroler
  
  class PageController extends Controller
  {
+ 
+     /**
+      * @return bool
+      */
      public function index()
      {
          echo $this->router->makeUrl('docs/:docsId?docsId=23');
          return;
      }
  
+     /**
+      * @return mixed
+      */
      public function docs()
      {
  
@@ -139,7 +147,12 @@ Kontroler
          }
      }
  
-     public function error($status = '404') 
+     /**
+      * @param string $status
+      *
+      * @return mixed
+      */
+     public function error($status = '404')
      {
          $routerCodes = $this->router->response();
  
@@ -150,7 +163,7 @@ Kontroler
          $view = $this->loadView('index');
          $smartyConfig = Config::load('view/smarty');
  
-         $patchController = $smartyConfig->get('setTemplateDir', APP_DIR.'View/templates').'/errors/'.htmlspecialchars($status).$smartyConfig->get('fileExtension', '.html.php');
+         $patchController = $smartyConfig->get('setTemplateDir', APP_DIR . 'View/templates') . '/errors/' . htmlspecialchars($status) . $smartyConfig->get('fileExtension', '.html.php');
  
          if (!file_exists($patchController)) {
              return $this->router->redirect('error/:code?code=404');
@@ -159,8 +172,9 @@ Kontroler
          $view->assign('error', $routerCodes::$code[$status]);
          return Response::create($view->fetch('errors/' . htmlspecialchars($status)))->headers(['refresh' => '4;' . $this->router->makeUrl(':task/:action?task=page&action=index')]);
      }
-     
+ 
  }
+ 
      
      
 .. |router| cCode:: 
@@ -223,17 +237,21 @@ assign - jest metodą silnika templatki która przypisuje wartość do zmiennej 
 .. code-block:: php
 
  namespace View;
+
  use Dframe\Asset\Assetic;
- 
- 
+
  class IndexView extends \View\View
  {
+
+     /**
+      * @return bool
+      */
      public function init()
      {
          $this->router->assetic = new Assetic();
          $this->assign('router', $this->router);
- 
-         /* ... */
+     }
+ }
 
 .. center::
 
@@ -244,13 +262,14 @@ Rozszerzenie podstawowego **Dframe\Router** jest **Dframe\Router\Response** doda
 .. code-block:: php
 
  return Response::create('Hello Word!')
-        ->status(200)
-        ->headers([
-            'Expires' => 'Mon, 26 Jul 1997 05:00:00 GMT', 
-            'Cache-Control' => 'no-cache',
-            'Pragma', 'no-cache'
-        ]); 
-
+     ->status(200)
+     ->headers([
+         'Expires' => 'Mon, 26 Jul 1997 05:00:00 GMT',
+         'Cache-Control' => 'no-cache',
+         'Pragma',
+         'no-cache'
+     ]);
+     
 Dla generowania html
 
 .. code-block:: php
