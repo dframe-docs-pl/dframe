@@ -13,19 +13,20 @@ W modelu tworzysz poszczególne metody które mają zapytania do bazy danych ora
 .. code-block:: php
 
  namespace Model;
-    
-    class RequestModel extends \Model\Model
-    {
-        /**
-         * @parms int 
-         * return [boolean, array]
-         */
-    
-        public function getRequestSettings($requestId)
-        {
-            $row = $this->baseClass->db->pdoQuery('SELECT * FROM `request_type` WHERE request_type_id = ?', [$requestId])->result();
-            return $this->methodResult(true, $row);        
-        }
+
+ class RequestModel extends \Model\Model
+ {
+
+     /**
+      * @param $requestId
+      *
+      * @return array
+      */
+     public function getRequestSettings($requestId)
+     {
+         $row = $this->baseClass->db->pdoQuery('SELECT * FROM `request_type` WHERE request_type_id = ?', [$requestId])->result();
+         return $this->methodResult(true, $row);
+     }
 
 
 Warto zwrócić uwagę ze praktycznie wszystkie metody, po za kilkoma wyjątkami, zwracają dane w postaci tablicy gotowej do odczytu i zwracane są przez metodę.
@@ -33,10 +34,10 @@ Warto zwrócić uwagę ze praktycznie wszystkie metody, po za kilkoma wyjątkami
 .. code-block:: php
 
  /**
- * @parms boolean
- * @parms array
- */
-
+  * @param boolean
+  * @param array
+  */
  $this->methodResult(true, $row);
+
 
 .. |github| fa-icon:: fa-github
