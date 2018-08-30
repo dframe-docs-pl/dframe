@@ -16,7 +16,7 @@ By móc zacząć używać tokenów do pliku Bootstrap.php należy dopisać do __
 
 .. code-block:: php
 
- $this->session  = new \Dframe\Session(SESSION_NAME);
+ $this->session  = new \Dframe\Session(APP_NAME);
  $this->token  = new \Dframe\Token($this->session);
 
 Przyład użycia:
@@ -44,13 +44,14 @@ Smarty3 Plugin
   * Purpose:  outputs a token
   * -------------------------------------------------------------
   */
-  
+ 
  /*
-  * Instalation: 
+  * Instalation:
   * Put file in to app/Libs/Plugins/smarty/function.token.php
   * Usage: {token name='userToken'}
   */
- function smarty_function_token($name){
+ function smarty_function_token($name)
+ {
      $token = new \Dframe\Token(new \Dframe\Session(APP_NAME));
      return $token->generate($name['name'])->get($name['name']);
  }
