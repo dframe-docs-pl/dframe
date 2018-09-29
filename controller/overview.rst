@@ -4,6 +4,15 @@
 
 Controller
 ---------
+Kontroller jest wywoływany poprzez wcześniej ustawiony routing. Co prawda nie potrzeba ustawiać routingu gdyż strona może być ładowana poprzez 
+ścieszkę katalogów np. 
+
+* example.com/**{controller}**/**{metoda}** 
+* example.com/**{controller}**/**{metoda}**/**{parametr}**/**{wartosc}**
+* example.com/**{folder},{controller}**/**{metoda}**
+
+Nie mniej jednak może to w większych aplikachach utrudnić poruszanie się i tworzenie linków. Można do tego użyć **annotacji** lub klasycznie 
+pliku config/router.php
 
 **Controller/Page.php**
 
