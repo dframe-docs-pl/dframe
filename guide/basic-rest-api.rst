@@ -1,3 +1,10 @@
+.. title:: Proste Rest Api - Dframeframework.com
+
+.. meta::
+    :description: Dodawanie użytkownika można zrobić na wiele sposóbów np encje. Jednak przedstawię tutaj najszybszy sposób z minimalną ilością plików.
+    :keywords: dframe, router, routing, urls, url, restapi, htaccess, routes, php7, dframeframework, dodawanie użytkownika  
+
+
 Dodawanie użytkownika można zrobić na wiele sposóbów np encje. Jednak przedstawię tutaj najszybszy sposób z minimalną ilością plików.
 
 Jak mówi sama nazwa MVC zacznijmi od Modelu. 
