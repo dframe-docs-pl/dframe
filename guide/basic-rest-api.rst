@@ -26,6 +26,27 @@ W jego zawartości umieśćmy.
  class UserModel extends Model
  {
      /**
+      * Pobiranie listy użytkowników
+      *
+      * @return array
+      */
+     public function getUsers(){
+         $results = $this->db->pdoQuery('SELECT * FROM `users`')->results();
+         return $this->methodResult(true, ['data' => $results]);
+     }
+     
+     /**
+      * Pobranie użytkownika
+      *
+      * @return array
+      */
+     public function getUser($userId){
+         $result = $this->db->pdoQuery('SELECT * FROM `users` WHERE `users`.`user_id` = ?', [$userId])->result();
+         return $this->methodResult(true, ['user' => $result]);
+     }
+     
+     /** 
+      * Dodawanie użytkownika do bazy
       * @param array $user
       *
       * @return array
@@ -85,12 +106,18 @@ Przejdzmy do stowrzenia Controllera pod ścieszką **app/Controller/Api/Users.ph
      {
          switch ($_SERVER['REQUEST_METHOD']) {
              case 'GET':
- 
-                 // Example
-                 //$UsersModel = $this->loadModel('Users');
-                 //$users = $UsersModel->getUsers();
- 
-                 return Response::renderJSON(['code' => 200, 'data' => ['users' => [['id' => '1']]]])->status(200);
+
+                 $UsersModel = $this->loadModel('Users');
+                 $users = $UsersModel->getUsers();
+                 
+                 $data = ['users' => []]
+                 foreach($users as $key => $user) {
+                     $data[] = [
+                         'id' => $user['user_id'],
+                         'email' => $user['user_email'],
+                 }
+                 
+                 return Response::renderJSON(['code' => 200, 'data' => $data])->status(200);
                  break;
  
              case 'POST':
@@ -139,6 +166,7 @@ Przejdzmy do stowrzenia Controllera pod ścieszką **app/Controller/Api/Users.ph
  
      /**
       * Routing do tego kontrollera ustawimy na api/users/:userId
+      *
       * @return Response
       */
      public function one()
@@ -146,17 +174,26 @@ Przejdzmy do stowrzenia Controllera pod ścieszką **app/Controller/Api/Users.ph
          switch ($_SERVER['REQUEST_METHOD']) {
  
              case 'GET':
+
+                 $UsersModel = $this->loadModel('Users');
+                 $user = $UsersModel->getUser($_GET['userId]);
+                 if(is_null($user['data']){
+                     return Response::renderJSON(['code' => 404, 'message' => 'User not found.]])->status(404);
+                 }
+                 
+                 $data = [
+                     'user' => [
+                         'id' => $user['user_id']
+                         'email' => $user['user_email']
+                     ]
+                 ];
  
-                 // Example
-                 //$UsersModel = $this->loadModel('Users');
-                 //$user = $UsersModel->getUser($_GET['userId]);
-                 $data = ['id' => '1'];
- 
-                 return Response::renderJSON(['code' => 200, 'data' => ['user' => $data]])->status(200);
+                 return Response::renderJSON(['code' => 200, 'data' => $data])->status(200);
                  break;
  
  
          }
+         
          return Response::renderJSON(['code' => 405, 'message' => 'Method not allowed.'])->status(405);
      }
  
