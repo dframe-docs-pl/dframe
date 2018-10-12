@@ -24,22 +24,23 @@ Stalone
 
 Prostowa i minimalizm sprawa ze chce się używać samej klasy. W tym celu w projekcie dostępne są następujące metody. 
 
-+--------------+-+
-| |newSession| | |
-+--------------+-+
-| |register|   | |
-+--------------+-+
-| |authLogin|  | |
-+--------------+-+
-| |set|        | |
-+--------------+-+
-| |get|        | |
-+--------------+-+
-| |remove|     | |
-+--------------+-+
-| |end|        | |
-+--------------+-+
+=======
+Standalone
+=======
 
+Simplicity and minimalism make you want to use the same class. In order to achieve that, the following methods are available in the project.
+
+.. code-block:: php
+  
+ $this->session = new \Dframe\Session('name');
+ $session = new Session('HashSaltRandomForSession');
+ $session->register(); // Set session_id and session_time - default 60
+ $session->authLogin(); // Return true/false if session is registrer
+ $session->set($key, $value); // set $_SESSION[$key] = $value;
+ $session->get($key, $or = null); // get $_SESSION[$key];
+ $session->remove($key) // unset($_SESSION[$key]);
+ $session->end(); // session_destroy
+ 
 .. |get| cCode:: $this->baseClass->session->get('ok', false); 
 .. |sesok| cCode:: $_SESSION['ok']
 .. |baseclass| cCode:: $this->baseClass->session
