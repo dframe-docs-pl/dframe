@@ -58,7 +58,10 @@ W jego zawartości umieśćmy.
          ];
  
          try {
- 
+             
+             /**
+              * Rozpoczęcie Transakcji
+              */
              $this->db->start();
  
              $addedId = $this->db->insert('users', $data)->getLastInsertId();
@@ -66,10 +69,16 @@ W jego zawartości umieśćmy.
                  throw new \Exception('Cannot add new user.');
              }
  
+              /**
+              * Commit Transakcji
+              */
              $this->db->end();
  
          } catch (\Exception $e) {
  
+             /**
+              * Rolback Transakcji
+              */
              $this->db->back();
              return $this->methodResult(false, ['response' => $e->messages()]);
          }
