@@ -69,7 +69,7 @@ W jego zawartości umieśćmy.
                  throw new \Exception('Cannot add new user.');
              }
  
-              /**
+             /**
               * Commit Transakcji
               */
              $this->db->end();
