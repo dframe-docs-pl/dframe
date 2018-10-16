@@ -77,7 +77,7 @@ W jego zawartości umieśćmy.
          } catch (\Exception $e) {
  
              /**
-              * Rolback Transakcji
+              * Rollback Transakcji
               */
              $this->db->back();
              return $this->methodResult(false, ['response' => $e->messages()]);
