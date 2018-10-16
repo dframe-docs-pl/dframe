@@ -178,7 +178,7 @@ Przejdzmy do stowrzenia Controllera pod ścieszką **app/Controller/Api/Users.ph
                  $UsersModel = $this->loadModel('Users');
                  $user = $UsersModel->getUser($_GET['userId]);
                  if (is_null($user['data'])) {
-                     return Response::renderJSON(['code' => 404, 'message' => 'User not found.]])->status(404);
+                     return Response::renderJSON(['code' => 404, 'message' => 'User not found.']])->status(404);
                  }
                  
                  $data = [
