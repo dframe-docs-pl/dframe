@@ -14,6 +14,22 @@ Kontroller jest wywoływany poprzez wcześniej ustawiony routing. Co prawda nie 
 Nie mniej jednak może to w większych aplikachach utrudnić poruszanie się i tworzenie linków. Można do tego użyć **annotacji** lub klasycznie 
 pliku config/router.php
 
+Pseudo konstruktory start(), init()
+---------
+
+W aplikacji by nie było potrzeby nadpisywania __construct poprzez parent::__construct, w frameworku zostały dodane metody 
+*start()* oraz *init()*
+
+
+Metode **start()** zaleca się używać używać się do klas **abstrakcyjnych** natomiast **init()** do pozostałych. 
+
+*Notka - W pseudo klasach* **nie** *powinny być ładowane np modele oraz widoki z przypisanie do $this.*
+
+
+Przykład
+---------
+
+
 **Controller/Page.php**
 
 .. customLi:: myTabs
