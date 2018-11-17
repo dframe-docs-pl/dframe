@@ -24,7 +24,7 @@ W modelu tworzysz poszczególne metody które mają zapytania do bazy danych ora
       */
      public function getRequestSettings($requestId)
      {
-         $row = $this->baseClass->db->pdoQuery('SELECT * FROM `request_type` WHERE request_type_id = ?', [$requestId])->result();
+         $row = $this->db->pdoQuery('SELECT * FROM `request_type` WHERE request_type_id = ?', [$requestId])->result();
          return $this->methodResult(true, $row);
      }
 
