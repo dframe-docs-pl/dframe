@@ -7,7 +7,7 @@
 
 Dodawanie użytkownika można zrobić na wiele sposóbów np encje. Jednak przedstawię tutaj najszybszy sposób z minimalną ilością plików.
 
-Jak mówi sama nazwa MVC zacznijmi od Modelu. 
+Jak mówi sama nazwa MVC zacznijmy od Modelu.
 Stówrzmy sobie Model pod ścieszką **app/Model/Users.php**
 
 W jego zawartości umieśćmy.
@@ -26,7 +26,7 @@ W jego zawartości umieśćmy.
  class UserModel extends Model
  {
      /**
-      * Pobiranie listy użytkowników
+      * Pobieranie listy użytkowników
       *
       * @return array
       */
