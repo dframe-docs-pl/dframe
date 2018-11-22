@@ -3,10 +3,6 @@ Hierarchical model–view–controller
 
 Pierwszym krokiem do rozpoczęcia jest dodanie do composer.json naszego namespace'a
 
-W głównym katalogu aplikacji towrzymy folder **Modules** w nim umieszczamy nasz moduł np
-
-**MyProject/subModule/src** w folderze src umieszaczamy poniższy kod
-
 .. code-block:: json
 
     "autoload": {
@@ -16,6 +12,21 @@ W głównym katalogu aplikacji towrzymy folder **Modules** w nim umieszczamy nas
         }
     }
     
+    
+     
+Aby moduł zaczął działać należy dodać do pliku app/Bootstrap.php poniższy kod 
+
+.. code-block:: php
+
+ $this->providers['modules'] = [
+     /** ... */
+     \MyProject\SubModule\Module::class,
+ ];
+
+W głównym katalogu aplikacji towrzymy folder **Modules** w nim umieszczamy nasz moduł np
+
+**MyProject/subModule/src** w folderze src umieszaczamy poniższy kod
+
 .. code-block:: php
 
  <?php
@@ -57,12 +68,3 @@ Przykład ładowania modelu
  /** Ładowanie widoku */
  $View = $this->loadView('Index', 'MyProject/SubModule');
  
- 
-Aby moduł zaczął działać należy jeszcze do pliku app/Bootstrap.php dodać 
-
-.. code-block:: php
-
- $this->providers['modules'] = [
-     /** ... */
-     \MyProject\SubModule\Module::class,
- ];
