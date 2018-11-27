@@ -1,6 +1,18 @@
-Hierarchical model–view–controller
+Hierarchical model–view–controller z Domain Driven Design
 ===========
 
+Praca z domyślną strukturą projektu udostępnioną przez Dframe jest absolutnie dobra, gdy pracujemy w małym lub średnim projekcie. Ale kiedy jest to wielka aplikacja z ponad 30 modelami, wtedy zaczynamy dusić się na własnej bazie kodu.
+
+Utrzymanie dużej aplikacji nie jest prosta. Zwłaszcza, gdy nie jest odpowiednio zorganizowana.
+
+Z pomocą przychodzi HMVC z dodatkiem Domain Driven Design
+
+- **Aplikacja** (*app/*) - zwykle posiada, kontroler, middleware oraz router. 
+- **Domena** (*modules/*) -  zawiera logikę biznesową (model, repozytorium, transformator, zasady itp.). 
+- **Infrastruktura** (*app/bin, app/Config, app/Lib*) -  zwykle posiada wspólne usługi
+- **Interfejs** (*app/View, app/Libs*) - zwykle zawiera widoki, język, zasoby.  
+     
+     
 Pierwszym krokiem do rozpoczęcia jest dodanie do composer.json naszego namespace'a
 
 .. code-block:: json
