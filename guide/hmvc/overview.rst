@@ -1,4 +1,4 @@
-Hierarchical model–view–controller z Domain Driven Design
+HMVC z Domain Driven Design
 ===========
 
 Praca z domyślną strukturą projektu udostępnioną przez Dframe jest absolutnie dobra, gdy pracujemy w małym lub średnim projekcie. Ale kiedy jest to wielka aplikacja z ponad 30 modelami, wtedy zaczynamy dusić się na własnej bazie kodu.
