@@ -80,3 +80,64 @@ Przykład ładowania modelu
  /** Ładowanie widoku */
  $View = $this->loadView('Index', 'MyProject/SubModule');
  
+
+Struktura Dframe z użyciem DDD wygląda w następujący sposób
+
+.. code-block:: bash
+
+   |   composer.json
+   |   composer.lock
+   |   LICENSE
+   |
+   +---app
+   |   |   Bootstrap.php
+   |   |
+   |   +---Config
+   |   |   |   router.php
+   |   |   |
+   |   |   \---view
+   |   |           smarty.php
+   |   |
+   |   +---Controller
+   |   |   |    Controller.php
+   |   |   |    Page.php
+   |   |   |
+   |   |   \---Users
+   |   |           Users.php
+   |   \---View
+   |       |   Index.php
+   |       |   View.php
+   |       |
+   |       +---templates
+   |           |   footer.html.php
+   |           |   header.html.php
+   |           |   index.html.php
+   |           |
+   |           +---errors
+   |           |       404.html.php
+   |           |
+   |           +---page
+   |                 test.html.php
+   +---Modules
+   |   |
+   |   +---Users
+   |       |
+   |       +---src
+   |           |   Module.php
+   |           |
+   |           +---Config
+   |           |      users.php
+   |           |
+   |           +---Model
+   |           |      Users.php
+   |           |      Role.php
+   |           |
+   |           +---Entity
+   |                  Users.php
+   |                
+   |---vendor
+   \---web
+       |   config.php
+       |   index.php
+       |
+       +---assets
