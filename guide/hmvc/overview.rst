@@ -8,9 +8,9 @@ Utrzymanie dużej aplikacji nie jest prosta. Zwłaszcza, gdy nie jest odpowiedni
 Z pomocą przychodzi HMVC z dodatkiem Domain Driven Design
 
 - **Aplikacja** (*app/*) - zwykle posiada, kontroler, middleware oraz router. 
-- **Domena** (*modules/*) -  zawiera logikę biznesową (model, repozytorium, transformator, zasady itp.). 
-- **Infrastruktura** (*app/bin, app/Config, app/Lib*) -  zwykle posiada wspólne usługi
-- **Interfejs** (*app/View, app/Libs*) - zwykle zawiera widoki, język, zasoby.  
+- **Domena** (*modules/*) -  zawiera logikę biznesową (modele, repozytorium, encje itp.). 
+- **Infrastruktura** (*app/bin, app/Config, app/Lib*) -  zwykle posiada wspólne usługi oraz odpowiada za przechowywanie oraz dostęp do danych
+- **Interfejs** (*app/View*) - zwykle zawiera widoki, język, zasoby.  
      
      
 Pierwszym krokiem do rozpoczęcia jest dodanie do composer.json naszego namespace'a
