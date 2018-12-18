@@ -75,7 +75,7 @@ W przypadku JSON
            
      }
      
-     return Response::renderJSON(['code' => 405, 'message' => 'Method Not Allowed'])->status(405);
+     return Response::renderJSON(['code' => 405, 'message' => 'Method Not Allowed'])->status(405)->headers(['Access-Control-Allow-Methods' => 'POST, GET'];
      
      //...
  }
