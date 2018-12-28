@@ -380,10 +380,8 @@ Teraz przykłądowa klasa która będzie objęta naszą abstrakcyjną klasą
  {
  
      /**
-      * Route services
-      * Notify
       *
-      * @return void
+      * @return mixed
       */
      public function index()
      {
