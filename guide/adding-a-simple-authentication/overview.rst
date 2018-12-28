@@ -218,7 +218,6 @@ Na końcu stworzmy nasz kontroler do logowania
  
  class UserController extends \Controller\Controller
  {
- 
      /**
       * @return mixed
       */
@@ -283,7 +282,7 @@ Gdy już stworzymy kontroler który nam ustawia dane do sesji użymy
   
   namespace Controller;
  
- class Page extends \Controller\Controller
+ class PageController extends \Controller\Controller
  {
      /**
       * @return mixed
@@ -291,12 +290,12 @@ Gdy już stworzymy kontroler który nam ustawia dane do sesji użymy
      public function login()
      {
  
-         $user = new \Modules\Users\Entity\User($this->baseClass->session->get('id', 0));
-         if ($user->isLogged() !== true) {  // Sprawdzany czy użytkownik jest zalogowany
+         $User = new \Modules\Users\Entity\User($this->baseClass->session->get('id', 0));
+         if ($User->isLogged() !== true) {  // Sprawdzany czy użytkownik jest zalogowany
              $View = $this->loadView('Index');
  
-             $token = $this->baseClass->token->get('loginToken'); // Generowanie tokena Zabezpieczającego kontroler logowania
-             $View->assign('loginToken', $token);
+             $loginToken = $this->baseClass->token->get('loginToken'); // Generowanie tokena Zabezpieczającego kontroler logowania
+             $View->assign('loginToken', $loginToken);
              return $View->render('page/login');
          }
          
@@ -377,7 +376,7 @@ Teraz przykłądowa klasa która będzie objęta naszą abstrakcyjną klasą
   * Here is a description of what this file is for.
   *
   */
- class Services extends \Controller\AbstractAuthController
+ class ServicesController extends \Controller\AbstractAuthController
  {
  
      /**
