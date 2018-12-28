@@ -368,7 +368,7 @@ Teraz przykłądowa klasa która będzie objęta naszą abstrakcyjną klasą
   * @license http://yourLicenceUrl/ (Licence Name)
   */
  
- namespace Services\Controller\Panel;
+ namespace Controller\Panel\Services;
  
  use Dframe\Router\Response;
  
