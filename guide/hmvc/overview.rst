@@ -1,4 +1,5 @@
 .. meta::
+   :title: HMVC z Domain Driven Design - Dframe Framework
    :description: HMVC z ddd - Dframe Framework
    :keywords: guide, tutorial, hmvc, ddd,  Domain Driven Design, dframe framework, controller, php
    
