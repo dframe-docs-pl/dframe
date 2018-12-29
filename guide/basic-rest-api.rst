@@ -13,8 +13,6 @@ Stówrzmy sobie Model pod ścieszką **app/Model/Users.php**
 W jego zawartości umieśćmy.
 
 .. code-block:: php
-
- <?php
  
  namespace Model;
  
@@ -93,8 +91,6 @@ Naszym widokiem w RESTAPI będzie json który jest wbudowany w klasę Dframe\Rou
 Przejdzmy do stowrzenia Controllera pod ścieszką **app/Controller/Api/Users.php**
 
 .. code-block:: php
-
- <?php
  
  namespace Controller\Api;
  
