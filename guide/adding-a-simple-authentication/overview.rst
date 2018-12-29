@@ -1,4 +1,5 @@
 .. meta::
+   :title: Prosta strona autoryzacji - Dframe Framework
    :description: Prosta strona autoryzacji - Dframe Framework
    :keywords: guide, tutorial, login, register, authentication, dframe framework, controller, php, php 7,
 
