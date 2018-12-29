@@ -256,7 +256,7 @@ Na końcu stworzmy nasz kontroler do logowania
      public function logout()
      {
          $this->baseClass->session->end();
-         //usuwanie cookie z last page
+         // Usuwanie cookie z last page
          unset($_COOKIE['currentPage']);
          setcookie("currentPage", "", time() - 3600, "/");
          return $this->router->redirect('page/login');
@@ -381,7 +381,6 @@ Teraz przykłądowa klasa która będzie objęta naszą abstrakcyjną klasą
  {
  
      /**
-      *
       * @return mixed
       */
      public function index()
