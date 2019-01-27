@@ -129,6 +129,9 @@ Struktura Dframe z użyciem DDD wygląda w następujący sposób
    |       +---src
    |           |   Module.php
    |           |
+   |           +---Command
+   |           |      Users.php
+   |           |
    |           +---Config
    |           |      users.php
    |           |
