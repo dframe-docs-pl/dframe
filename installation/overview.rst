@@ -58,8 +58,19 @@ Nie wszystkie foldery istnieją na starcie, ale takowe mogą się znaleźć. Wsz
 .. |chmod664| cCode:: chmod 664
 .. |www-data| cCode:: www-data
 
+**Jak zmienić uprawnienia do folderu i wszystkich jego podfolderów i plików w systemie Linux?**
 
+Aby zmienić wszystkie katalogi na 755 (drwxr-xr-x):
 
+.. code-block:: bash
+
+ find /opt/lampp/htdocs -type d -exec chmod 755 {} \;
+
+Aby zmienić wszystkie pliki na 644 (-rw-r--r--):
+ 
+.. code-block:: bash
+
+ find /opt/lampp/htdocs -type f -exec chmod 644 {} \;
 
  
 Serwer HTTP
