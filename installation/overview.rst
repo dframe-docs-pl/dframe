@@ -58,6 +58,7 @@ Nie wszystkie foldery istnieją na starcie, ale takowe mogą się znaleźć. Wsz
 .. |chmod664| cCode:: chmod 664
 .. |www-data| cCode:: www-data
 
+
 **Jak zmienić uprawnienia do folderu i wszystkich jego podfolderów i plików w systemie Linux?**
 
 Aby zmienić wszystkie katalogi na 755 (drwxr-xr-x):
