@@ -53,11 +53,7 @@ Nie wszystkie foldery istnieją na starcie, ale takowe mogą się znaleźć. Wsz
  chmod 777 -R app/View/cache
  chmod 777 -R app/View/templates_c
  chmod 777 -R app/View/uploads
-
-.. |chmod755| cCode:: chmod 755
-.. |chmod664| cCode:: chmod 664
-.. |www-data| cCode:: www-data
-
+ 
 
 **Jak zmienić uprawnienia do folderu i wszystkich jego podfolderów i plików w systemie Linux?**
 
@@ -73,7 +69,6 @@ Aby zmienić wszystkie pliki na 644 (-rw-r--r--):
 
  find /opt/lampp/htdocs -type f -exec chmod 644 {} \;
 
- 
 Serwer HTTP
 ----------
 Po instalacji należy skonfigurować serwer aplikacji tak by wskazywał na katalog /web. Upewnij się, że załadowałeś mod_rewrite
@@ -121,3 +116,6 @@ Po instalacji należy skonfigurować serwer aplikacji tak by wskazywał na katal
        include fastcgi_params;
    }
 
+.. |chmod755| cCode:: chmod 755
+.. |chmod664| cCode:: chmod 664
+.. |www-data| cCode:: www-data
