@@ -2,7 +2,7 @@
 
 .. meta::
     :description: Routing - Elastyczny routing linków. Tworząc aplikacje warto zadbać by miały one przyjazne linki.
-    :keywords: dframe, router, routing, urls, seo, url, friendlyurl, htaccess, routes, dframeframework, pozycjonowanie  
+    :keywords: dframe, router, routing, urls, seo, url, friendlyurl, htaccess, routes, dframeframework, pozycjonowanie
 
 ====
 Prosty Router PHP
@@ -120,10 +120,10 @@ Kontroler
  <?php
 
  namespace Controller;
- 
+
  use Dframe\Controller;
  use Dframe\Router\Response;
- 
+
  class PageController extends Controller
  {
 
@@ -284,7 +284,7 @@ Wyświetlanie w formacie JSON
 
  return Response::renderJSON(['code' => 200, 'data' => []]);
 
-Wyświetlanie w formacie JSONP 
+Wyświetlanie w formacie JSONP
 
 .. code-block:: php
 
