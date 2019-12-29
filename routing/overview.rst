@@ -15,7 +15,7 @@ Router linków działa na zasadzie jak routery sieciowe. Ma on za zadanie wywoł
 
  $this->router->addRoute([
      'page/:method' => [
-         'page/[method]/', 
+         'page/[method]/',
          'task=page&action=[method]'
      ]
  ]);
@@ -52,7 +52,7 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
 .. code-block:: php
 
  <?php
-  
+
  return [
      'https' => false,
      'NAME_CONTROLLER' => 'page',    // Default Controller for router
@@ -118,7 +118,7 @@ Kontroler
 .. code-block:: php
 
  <?php
- 
+
  namespace Controller;
  
  use Dframe\Controller;
@@ -126,7 +126,7 @@ Kontroler
  
  class PageController extends Controller
  {
- 
+
      /**
       * @return bool
       */
@@ -172,10 +172,10 @@ Kontroler
          $view->assign('error', $routerCodes::$code[$status]);
          return Response::create($view->fetch('errors/' . htmlspecialchars($status)))->headers(['refresh' => '4;' . $this->router->makeUrl(':task/:action?task=page&action=index')]);
      }
- 
+
  }
- 
-     
+
+
      
 .. |router| cCode:: 
  <?php $this->router; ?>
@@ -269,7 +269,7 @@ Rozszerzenie podstawowego **Dframe\Router** jest **Dframe\Router\Response** doda
          'Pragma',
          'no-cache'
      ]);
-     
+
 Dla generowania html
 
 .. code-block:: php
@@ -282,13 +282,13 @@ Wyświetlanie w formacie JSON
 
 .. code-block:: php
 
- return Response::renderJSON(['code' => 200, 'data' => []]); 
+ return Response::renderJSON(['code' => 200, 'data' => []]);
 
 Wyświetlanie w formacie JSONP 
 
 .. code-block:: php
 
- return Response::renderJSONP(['code' => 200, 'data' => []]); 
+ return Response::renderJSONP(['code' => 200, 'data' => []]);
 
 Przekierowanie
 
