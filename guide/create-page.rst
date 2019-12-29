@@ -8,7 +8,7 @@ Jak stworzyć strone?
 ===========
 
 Utworzenie nowej strony wymaga dwóch rzeczy. Pierwsza rzecz to router a druga kontroler.
-Jeśli chcesz pod adresem * /about * chcesz mieć stronę do pliku *app/config/router.php* należy dodać poniższy kod:
+Jeśli chcesz pod adresem **/about** chcesz mieć stronę do pliku **app/config/router.php** należy dodać poniższy kod:
 
 .. code-block:: php
 
@@ -24,8 +24,8 @@ Jeśli chcesz pod adresem * /about * chcesz mieć stronę do pliku *app/config/r
     /* ... */
 
 
-*task* odpowiada za lokalizacje pliku która domyślnie jest wyszukiwania w app/Controller
-*action* odpowiada za wywołanie metody w pliku który podaliśmy w *task*
+**task** odpowiada za lokalizacje pliku która domyślnie jest wyszukiwania w app/Controller
+**action** odpowiada za wywołanie metody w pliku który podaliśmy w **task**
 
 Następnie w folderze **app/Controller** tworzymy nasz plik *About.php* z naszą zawartością
 
