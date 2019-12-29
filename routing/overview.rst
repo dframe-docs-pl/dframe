@@ -2,7 +2,7 @@
 
 .. meta::
     :description: Routing - Elastyczny routing linków. Tworząc aplikacje warto zadbać by miały one przyjazne linki.
-    :keywords: dframe, router, routing, urls, seo, url, friendlyurl, htaccess, routes, dframeframework, pozycjonowanie  
+    :keywords: dframe, router, routing, urls, seo, url, friendlyurl, htaccess, routes, dframeframework, pozycjonowanie
 
 Tworząc aplikacje warto zadbać by miały one „przyjazne” linki. Ma to duży wpływ na pozycjonowanie seo.
 Router linków działa na zasadzie jak routery sieciowe. Ma on za zadanie wywołać naszą metodę z kontrollera.
@@ -67,7 +67,7 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
                  'code' => '[code]'
              )
          ),
-         
+
          ':task/:action' => array(
              '[task]/[action]/[params]',
              'task=[task]&action=[action]',
@@ -77,7 +77,7 @@ określa w jaki sposób mają być interpretowane dodatkowe parametry foo=bar
                  '[name]=[value]'
              )
           ),
-          
+
          'default' => array(
              '[task]/[action]/[params]',
              'task=[task]&action=[action]',
@@ -103,10 +103,10 @@ Kontroler
 
  <?php
  namespace Controller;
- 
+
  use Dframe\Controller;
  use Dframe\Router\Response;
- 
+
  class PageController extends Controller
  {
      public function index()
@@ -249,11 +249,11 @@ Wyświetlanie w formacie JSON
 
  return Response::renderJSON(array('return' => '1')); 
 
-Wyświetlanie w formacie JSONP 
+Wyświetlanie w formacie JSONP
 
 .. code-block:: php
 
- return Response::renderJSONP(array('return' => '1')); 
+ return Response::renderJSONP(array('return' => '1'));
 
 Przekierowanie
 
