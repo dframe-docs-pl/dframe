@@ -116,10 +116,11 @@ Po instalacji należy skonfigurować serwer aplikacji tak by wskazywał na katal
        include fastcgi_params;
    }
 
+
 Konfiguracja
 ----------
 
-Po instalacji w pliku web/config.php znajdziemy zmienne stałe które sa widoczne w całym projekcie. Należy je ustawić po instalacji.
+Po instalacji w pliku **web/config.php** znajdziemy zmienne stałe które sa widoczne w całym projekcie. Należy je ustawić po instalacji.
 
 .. code-block:: nginx
 
