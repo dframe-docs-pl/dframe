@@ -122,7 +122,9 @@ Konfiguracja
 
 Po instalacji w pliku **web/config.php** znajdziemy zmienne stałe które sa widoczne w całym projekcie. Należy je ustawić po instalacji.
 
-.. code-block:: nginx
+.. code-block:: php
+
+ <?php
 
  // Application name
  define('APP_NAME', "App name");  
