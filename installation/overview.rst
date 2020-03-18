@@ -116,6 +116,28 @@ Po instalacji należy skonfigurować serwer aplikacji tak by wskazywał na katal
        include fastcgi_params;
    }
 
+Konfiguracja
+----------
+
+Po instalacji w pliku web/config.php znajdziemy zmienne stałe które sa widoczne w całym projekcie. Należy je ustawić po instalacji.
+
+.. code-block:: nginx
+
+ // Application name
+ define('APP_NAME', "App name");  
+ 
+ // Check PSR-2: Coding Style
+ define('CODING_STYLE', true);    
+ 
+ // Website configuration
+ define('VERSION', "Dframe");     // Version aplication
+ define('SALT', "YOURSALT123");   // SALT default: YOURSALT123
+ 
+ // Website adress
+ define('HTTP_HOST', 'website.url');
+
+
+
 .. |chmod755| cCode:: chmod 755
 .. |chmod664| cCode:: chmod 664
 .. |www-data| cCode:: www-data
