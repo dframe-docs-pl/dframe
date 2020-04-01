@@ -38,7 +38,7 @@ Cron jest usługą do cyklicznego wykonywania zadań. Pozwala ona w określonym 
       */
      public function init()
      {
-         $cron = $this->inLock('mail', [$this->loadModel('Mail/Mail', 'Mail'), 'sendMails'], []);
+         $cron = $this->inLock('mail', [$this->loadModel('Mail/Mail'), 'sendMails'], []);
          if ($cron['return'] == true) {
              $mail = $cron['response'];
              return Response::renderJSON(['code' => 200, 'message' => 'Cron Complete', 'data' => ['mail' => ['data' => $mail['response']]]]);
@@ -71,4 +71,4 @@ Metoda ta ma w sobie wbudowaną metodę która blokuje go do czasu pełnego zako
 
 .. code-block:: php
 
- $this->inLock('mail', [$this->loadModel('Mail/Mail', 'Mail'), 'sendMails'], []);
+ $this->inLock('mail', [$this->loadModel('Mail/Mail'), 'sendMails'], []);
